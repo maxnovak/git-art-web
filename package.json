@@ -10,13 +10,17 @@
   },
   "license": "MIT",
   "dependencies": {
+    "eslint-plugin-react": "^7.20.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
   "devDependencies": {
     "@types/react": "^16.9.34",
     "@types/react-dom": "^16.9.7",
+    "@typescript-eslint/eslint-plugin": "^3.4.0",
+    "@typescript-eslint/parser": "^3.4.0",
     "babel-preset-nano-react-app": "^0.1.0",
+    "eslint": "^7.3.1",
     "parcel": "^2.0.0-alpha.3.2",
     "typescript": "^3.8.3"
   },
