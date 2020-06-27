@@ -2,7 +2,7 @@ import React from "react";
 
 export const App = () => (
   <React.Fragment>
-    <h1>Welcome to React Parcel Micro App!</h1>
-    <p>Hard to get more minimal than this React app.</p>
+    <h1>Page under construction</h1>
+    <p>Someday you'll be able to make requests to generate some git art from here</p>
   </React.Fragment>
 );
