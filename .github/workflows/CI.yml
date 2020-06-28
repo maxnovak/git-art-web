@@ -30,6 +30,10 @@ jobs:
     - name: eslint
       run: yarn lint
     
+    # test code
+    - name: jest
+      run: yarn test
+
     # typecheck code
     - name: typescript checking
       run: yarn typecheck
