@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "",
   "scripts": {
-    "start": "parcel index.html",
+    "start": "node server/index.js",
     "build": "parcel build index.html",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx --config .eslintrc.js ./src",
     "test": "jest",
