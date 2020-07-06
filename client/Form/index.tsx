@@ -35,11 +35,12 @@ export const Form = () => {
 
     fetch('https://git-art-api.herokuapp.com/make-art', requestOptions)
       .then(response => (
-        response.json()
+        response.blob()
       ))
       .then(
         data => {
-          console.log(data);
+          const file = window.URL.createObjectURL(data);
+          window.location.assign(file);
         }
       )
   }
