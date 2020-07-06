@@ -18,7 +18,7 @@ export const Form = () => {
   const [email, setEmail] = useState('');
   const [word, setWord] = useState('');
 
-  const postData = () => {
+  const postData = async () => {
     const body = JSON.stringify({
       repoName,
       year,
@@ -32,17 +32,14 @@ export const Form = () => {
       headers: { 'Content-Type': 'application/json' },
       body,
     };
-
-    fetch('https://git-art-api.herokuapp.com/make-art', requestOptions)
-      .then(response => (
-        response.blob()
-      ))
-      .then(
-        data => {
-          const file = window.URL.createObjectURL(data);
-          window.location.assign(file);
-        }
-      )
+    try {
+      const response = await fetch('https://git-art-api.herokuapp.com/make-art', requestOptions)
+      const data = await response.blob();
+      const file = await window.URL.createObjectURL(data);
+      window.location.assign(file);
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   return <React.Fragment>
