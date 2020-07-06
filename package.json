@@ -4,8 +4,8 @@
   "description": "",
   "scripts": {
     "start": "node server/index.js",
-    "build": "parcel build index.html",
-    "lint": "eslint --ext .js,.jsx,.ts,.tsx --config .eslintrc.js ./src",
+    "build": "parcel build client/index.html",
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx --config .eslintrc.js ./client",
     "test": "jest",
     "typecheck": "tsc --noEmit",
     "typewatch": "tsc --noEmit --watch"
