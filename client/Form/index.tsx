@@ -18,6 +18,32 @@ export const Form = () => {
   const [email, setEmail] = useState('');
   const [word, setWord] = useState('');
 
+  const postData = () => {
+    const body = JSON.stringify({
+      repoName,
+      year,
+      name,
+      email,
+      word,
+      pattern: 'word',
+    });
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body,
+    };
+
+    fetch('https://git-art-api.herokuapp.com/make-art', requestOptions)
+      .then(response => (
+        response.json()
+      ))
+      .then(
+        data => {
+          console.log(data);
+        }
+      )
+  }
+
   return <React.Fragment>
     <InputContainer>
       <TextField type="text" placeholder="Name of Repository"
@@ -36,6 +62,6 @@ export const Form = () => {
         onChange={ event => setWord(event.target.value) }
         />
     </InputContainer>
-    <Button onClick={() => (console.log(repoName, year, name, email, word))}>Create Art</Button>
+    <Button onClick={postData}>Create Art</Button>
   </React.Fragment>
 }
