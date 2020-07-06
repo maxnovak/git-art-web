@@ -31,26 +31,31 @@ Array [
   >
     <input
       className="c1"
+      onChange={[Function]}
       placeholder="Name of Repository"
       type="text"
     />
     <input
       className="c1"
+      onChange={[Function]}
       placeholder="Year"
       type="number"
     />
     <input
       className="c1"
+      onChange={[Function]}
       placeholder="Name"
       type="text"
     />
     <input
       className="c1"
+      onChange={[Function]}
       placeholder="Email"
       type="email"
     />
     <input
       className="c1"
+      onChange={[Function]}
       placeholder="Word to Draw"
       type="text"
     />
@@ -71,6 +76,7 @@ Array [
 
 <button
     className="c0"
+    onClick={[Function]}
   >
     Create Art
   </button>,
