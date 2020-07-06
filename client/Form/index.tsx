@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Button } from '../Button';
+import { Label } from '../Label';
 import { TextField } from '../InputFields';
 
 const InputContainer = styled.div`
@@ -44,21 +45,41 @@ export const Form = () => {
 
   return <React.Fragment>
     <InputContainer>
-      <TextField type="text" placeholder="Name of Repository"
+      <Label htmlFor="repoName">Name of Repository</Label>
+      <TextField
+        id="repoName"
         onChange={ event => setRepoName(event.target.value) }
-        />
-      <TextField type="number" placeholder="Year"
+        placeholder="Name of Repository"
+        type="text"
+      />
+      <Label htmlFor="year">Year</Label>
+      <TextField
+        id="year"
         onChange={ event => setYear(event.target.value) }
-        />
-      <TextField type="text" placeholder="Name"
+        placeholder="Year"
+        type="number"
+      />
+      <Label htmlFor="name">Name</Label>
+      <TextField
+        id="name"
         onChange={ event => setName(event.target.value) }
-        />
-      <TextField type="email" placeholder="Email"
+        placeholder="Name"
+        type="text"
+      />
+      <Label htmlFor="email">Email</Label>
+      <TextField
+        id="email"
         onChange={ event => setEmail(event.target.value) }
-        />
-      <TextField type="text" placeholder="Word to Draw"
+        placeholder="Email"
+        type="email"
+      />
+      <Label htmlFor="word">Word to Draw</Label>
+      <TextField
+        id="word"
         onChange={ event => setWord(event.target.value) }
-        />
+        placeholder="Word to Draw"
+        type="text"
+      />
     </InputContainer>
     <Button onClick={postData}>Create Art</Button>
   </React.Fragment>
