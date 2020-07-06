@@ -3,9 +3,10 @@
   "version": "0.1.0",
   "description": "",
   "scripts": {
-    "start": "yarn build && node server/index.js",
     "build": "parcel build client/index.html",
+    "dev": "yarn build && node server/index.js",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx --config .eslintrc.js ./client",
+    "start": "node server/index.js",
     "test": "jest",
     "typecheck": "tsc --noEmit",
     "typewatch": "tsc --noEmit --watch"
