@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "build": "parcel build client/index.html",
-    "dev": "yarn build && node server/index.js",
+    "dev": "parcel client/index.html",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx --config .eslintrc.js ./client",
     "start": "node server/index.js",
     "test": "jest",
