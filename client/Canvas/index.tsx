@@ -7,7 +7,12 @@ const Container = styled.div`
   background-color:purple;
 `;
 
+const calander = Array.from(Array(52), _ => Array(7).fill(0));
+console.log(calander);
+
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export const Canvas = () => {
-  return <Container></Container>
+  return <Container>
+    
+  </Container>
 }
