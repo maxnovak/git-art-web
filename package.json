@@ -1,49 +1,32 @@
 {
-  "name": "git-art-web",
-  "version": "0.1.0",
-  "description": "",
+  "name": "my-app",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "build": "parcel build client/index.html",
-    "dev": "parcel client/index.html",
-    "lint": "eslint --ext .js,.jsx,.ts,.tsx --config .eslintrc.js ./client",
-    "start": "node server/index.js",
-    "test": "jest",
-    "typecheck": "tsc --noEmit",
-    "typewatch": "tsc --noEmit --watch"
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
   },
-  "license": "MIT",
   "dependencies": {
-    "app-root-path": "^3.0.0",
-    "compression": "^1.7.4",
-    "express": "^4.17.1",
-    "parcel": "^2.0.0-alpha.3.2",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "styled-components": "^5.1.1"
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "styled-components": "^6.3.8"
   },
   "devDependencies": {
-    "@babel/core": "^7.10.3",
-    "@babel/preset-env": "^7.10.3",
-    "@types/jest": "^26.0.3",
-    "@types/react": "^16.9.34",
-    "@types/react-dom": "^16.9.7",
-    "@types/react-test-renderer": "^16.9.2",
-    "@types/styled-components": "^5.1.0",
-    "@typescript-eslint/eslint-plugin": "^3.4.0",
-    "@typescript-eslint/parser": "^3.4.0",
-    "babel-jest": "^26.1.0",
-    "babel-preset-nano-react-app": "^0.1.0",
-    "eslint": "^7.3.1",
-    "eslint-plugin-react": "^7.20.0",
-    "jest": "^26.1.0",
-    "jest-styled-components": "^7.0.2",
-    "react-test-renderer": "^16.13.1",
-    "typescript": "^3.8.3"
-  },
-  "babel": {
-    "presets": [
-      "@babel/preset-env",
-      "babel-preset-nano-react-app"
-    ]
+    "@eslint/js": "^9.39.1",
+    "@types/node": "^24.10.1",
+    "@types/react": "^19.2.5",
+    "@types/react-dom": "^19.2.3",
+    "@types/styled-components": "^5.1.36",
+    "@vitejs/plugin-react": "^5.1.1",
+    "eslint": "^9.39.1",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-refresh": "^0.4.24",
+    "globals": "^16.5.0",
+    "typescript": "~5.9.3",
+    "typescript-eslint": "^8.46.4",
+    "vite": "^7.2.4"
   }
 }

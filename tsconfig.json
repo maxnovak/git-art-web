@@ -1,15 +1,7 @@
 {
-  "compilerOptions": {
-    "allowSyntheticDefaultImports": true,
-    "baseUrl": "./client",
-    "jsx": "react",
-    "moduleResolution": "Node",
-    "paths": {
-      "~*": ["./*"]
-    },
-    "strict": true,
-    "skipLibCheck": true,
-    "target": "ES2015"
-  },
-  "include": ["client/**/*"]
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ]
 }
