@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
-import Button from '@mui/joy/Button';
-import Input from '@mui/joy/Input';
-import { FormControl, FormHelperText, FormLabel, Option, Select, Stack } from '@mui/joy';
-import { Controller, useForm, type SubmitHandler } from "react-hook-form";
+import { Button, FormControl, FormHelperText, FormLabel, Input, Option, Select, Stack } from '@mui/joy';
+import { Controller, useForm, useWatch, type SubmitHandler } from "react-hook-form";
 import Warning from '../assets/material-symbols/warning.svg?react';
 
 interface IFormInput {
@@ -14,18 +12,15 @@ interface IFormInput {
   word: string
 }
 
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export const Form = () => {
   const [loading, setLoading] = useState(false);
   const { register, handleSubmit, formState: {
     errors
-  }, control, watch, setValue } = useForm<IFormInput>()
+  }, control, setValue } = useForm<IFormInput>();
+  const design = useWatch({control, name: "pattern"});
   const onSubmit: SubmitHandler<IFormInput> = (data) => {
-    console.log(data);
     postData(data);
-  }
-  const design = watch("pattern");
-  console.log(design);
+  };
 
   const currentYear = new Date().getFullYear();
 
