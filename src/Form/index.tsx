@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { Button } from '../Button';
-import { Label } from '../Label';
-import { TextField } from '../InputFields';
+import Button from '@mui/joy/Button';
+import Input from '@mui/joy/Input';
 
 const InputContainer = styled.div`
   display: flex;
@@ -18,8 +17,10 @@ export const Form = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [word, setWord] = useState('');
+  const [loading, setLoading] = useState(false);
 
   const postData = async () => {
+    setLoading(true);
     const body = JSON.stringify({
       repoName,
       year,
@@ -41,46 +42,37 @@ export const Form = () => {
     } catch (error) {
       console.log(error);
     }
+    setLoading(false);
   }
 
   return <React.Fragment>
     <InputContainer>
-      <Label htmlFor="repoName">Name of Repository</Label>
-      <TextField
+      <Input
         id="repoName"
-        onChange={ event => setRepoName(event.target.value) }
         placeholder="Name of Repository"
-        type="text"
+        onChange={ event => setRepoName(event.target.value) }
       />
-      <Label htmlFor="year">Year</Label>
-      <TextField
+      <Input
         id="year"
-        onChange={ event => setYear(event.target.value) }
         placeholder="Year"
-        type="number"
+        onChange={ event => setYear(event.target.value) }
       />
-      <Label htmlFor="name">Name</Label>
-      <TextField
+      <Input
         id="name"
-        onChange={ event => setName(event.target.value) }
         placeholder="Name"
-        type="text"
+        onChange={ event => setName(event.target.value) }
       />
-      <Label htmlFor="email">Email</Label>
-      <TextField
+      <Input
         id="email"
-        onChange={ event => setEmail(event.target.value) }
         placeholder="Email"
-        type="email"
+        onChange={ event => setEmail(event.target.value) }
       />
-      <Label htmlFor="word">Word to Draw</Label>
-      <TextField
+      <Input
         id="word"
+        placeholder="Word"
         onChange={ event => setWord(event.target.value) }
-        placeholder="Word to Draw"
-        type="text"
       />
     </InputContainer>
-    <Button onClick={postData}>Create Art</Button>
+    <Button onClick={postData} loading={loading}>Create Art</Button>
   </React.Fragment>
 }
