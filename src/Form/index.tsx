@@ -131,7 +131,7 @@ export const Form = () => {
               >
                 <Option value="checkered">Checkered</Option>
                 <Option value="give">Give</Option>
-                <Option value="table-flip">Table Flip</Option>
+                <Option value="table flip">Table Flip</Option>
                 <Option value="word">Word</Option>
               </Select>
             }
