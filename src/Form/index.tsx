@@ -1,14 +1,7 @@
 import React, { useState } from 'react';
-import styled from 'styled-components';
 import Button from '@mui/joy/Button';
 import Input from '@mui/joy/Input';
-
-const InputContainer = styled.div`
-  display: flex;
-  justify-content: start;
-  flex-wrap: wrap;
-  max-width: 300px;
-`;
+import { FormControl, FormLabel, Stack } from '@mui/joy';
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export const Form = () => {
@@ -46,7 +39,7 @@ export const Form = () => {
   }
 
   return <React.Fragment>
-    <InputContainer>
+    <Stack>
       <Input
         id="repoName"
         placeholder="Name of Repository"
@@ -72,7 +65,7 @@ export const Form = () => {
         placeholder="Word"
         onChange={ event => setWord(event.target.value) }
       />
-    </InputContainer>
+    </Stack>
     <Button onClick={postData} loading={loading}>Create Art</Button>
   </React.Fragment>
 }
