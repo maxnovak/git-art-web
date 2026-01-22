@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Button from '@mui/joy/Button';
 import Input from '@mui/joy/Input';
-import { FormControl, FormLabel, Stack } from '@mui/joy';
+import { FormControl, FormLabel, Option, Select, Stack } from '@mui/joy';
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export const Form = () => {
@@ -11,6 +11,7 @@ export const Form = () => {
   const [email, setEmail] = useState('');
   const [word, setWord] = useState('');
   const [loading, setLoading] = useState(false);
+  const [design, setDesign] = useState<any>();
 
   const postData = async () => {
     setLoading(true);
@@ -39,7 +40,7 @@ export const Form = () => {
   }
 
   return <React.Fragment>
-    <Stack>
+    <Stack spacing={2}>
       <FormControl>
         <FormLabel>Repo Name</FormLabel>
         <Input
@@ -75,6 +76,15 @@ export const Form = () => {
           onChange={ event => setEmail(event.target.value) }
           type="email"
         />
+      </FormControl>
+      <FormControl>
+        <FormLabel>Design</FormLabel>
+        <Select onChange={(_event, newValue) => setDesign(newValue)} required>
+          <Option value="checkered">Checkered</Option>
+          <Option value="give">Give</Option>
+          <Option value="table-flip">Table Flip</Option>
+          <Option value="word">Word</Option>
+        </Select>
       </FormControl>
       <FormControl>
         <FormLabel>Word</FormLabel>
