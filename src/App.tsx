@@ -1,7 +1,6 @@
 import React from "react";
 import { Form } from "./Form";
 
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export const App = () => (
   <React.Fragment>
     <h1>Page under construction</h1>
