@@ -40,31 +40,51 @@ export const Form = () => {
 
   return <React.Fragment>
     <Stack>
-      <Input
-        id="repoName"
-        placeholder="Name of Repository"
-        onChange={ event => setRepoName(event.target.value) }
-      />
-      <Input
-        id="year"
-        placeholder="Year"
-        onChange={ event => setYear(event.target.value) }
-      />
-      <Input
-        id="name"
-        placeholder="Name"
-        onChange={ event => setName(event.target.value) }
-      />
-      <Input
-        id="email"
-        placeholder="Email"
-        onChange={ event => setEmail(event.target.value) }
-      />
-      <Input
-        id="word"
-        placeholder="Word"
-        onChange={ event => setWord(event.target.value) }
-      />
+      <FormControl>
+        <FormLabel>Repo Name</FormLabel>
+        <Input
+          id="repoName"
+          placeholder="Name of Repository"
+          onChange={ event => setRepoName(event.target.value) }
+          type="text"
+        />
+      </FormControl>
+      <FormControl>
+        <FormLabel>Year</FormLabel>
+        <Input
+          id="year"
+          placeholder="Year"
+          onChange={ event => setYear(event.target.value) }
+          type="number"
+        />
+      </FormControl>
+      <FormControl>
+        <FormLabel>Name</FormLabel>
+        <Input
+          id="name"
+          placeholder="Name"
+          onChange={ event => setName(event.target.value) }
+          type="text"
+        />
+      </FormControl>
+      <FormControl>
+        <FormLabel>Email</FormLabel>
+        <Input
+          id="email"
+          placeholder="Email"
+          onChange={ event => setEmail(event.target.value) }
+          type="email"
+        />
+      </FormControl>
+      <FormControl>
+        <FormLabel>Word</FormLabel>
+        <Input
+          id="word"
+          placeholder="Word"
+          onChange={ event => setWord(event.target.value) }
+          type="text"
+        />
+      </FormControl>
     </Stack>
     <Button onClick={postData} loading={loading}>Create Art</Button>
   </React.Fragment>
