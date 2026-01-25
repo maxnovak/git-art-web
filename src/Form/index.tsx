@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Button, FormControl, FormHelperText, FormLabel, Input, Option, Select, Stack } from '@mui/joy';
 import { Controller, useForm, useWatch, type SubmitHandler } from "react-hook-form";
 import Warning from '../assets/material-symbols/warning.svg?react';
+import { DrawingMatrix } from '../DrawingMatrix';
+import { Pallette } from '../DrawingMatrix/Pallete';
 
 interface IFormInput {
   repoName: string
@@ -21,7 +23,7 @@ export const Form = () => {
   const onSubmit: SubmitHandler<IFormInput> = (data) => {
     postData(data);
   };
-
+  const [colorChoice, setColorChoice] = useState('0');
   const currentYear = new Date().getFullYear();
 
   const postData = async (data: IFormInput) => {
@@ -114,7 +116,7 @@ export const Form = () => {
             </FormHelperText>
           }
         </FormControl>
-                <FormControl error={!!errors.pattern}>
+        <FormControl error={!!errors.pattern}>
           <FormLabel>Design</FormLabel>
           <Controller
             render={({ field }) =>
@@ -128,6 +130,7 @@ export const Form = () => {
                 <Option value="give">Give</Option>
                 <Option value="table flip">Table Flip</Option>
                 <Option value="word">Word</Option>
+                <Option value="draw">Draw Something Yourself</Option>
               </Select>
             }
             control={control}
@@ -157,6 +160,12 @@ export const Form = () => {
               </FormHelperText>
             }
           </FormControl>
+        }
+        {design === 'draw' &&
+          <React.Fragment>
+            <Pallette chooseColor={setColorChoice} selectedColor={colorChoice} />
+            <DrawingMatrix />
+          </React.Fragment>
         }
       <Button type="submit" loading={loading}>Create Art</Button>
     </Stack>

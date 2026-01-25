@@ -1,15 +1,17 @@
-import { Box, Link } from '@mui/joy';
+import { Button } from '@mui/joy';
 import { COLORS } from './colors';
 
-interface ColorBox {
-    color: string
+interface Square {
+    color: number
+    onClick: ()=> void
+    selected?: boolean
 }
 
-//create a pallete and then let people draw on a canvas
+export const Square:React.FunctionComponent<Square> = ({color, onClick, selected}) => {
+    const boxShadow = selected ? 'inset 0 0 0 4px black' : 'inset 0 0 0 1px #bababa';
 
-const ColorBox: React.FunctionComponent<ColorBox> = ({color}) => {
-    return <Box
-        component="span"
+    return <Button
+        onClick={onClick}
         sx={{
             position: 'relative',
             width: '1em',
@@ -20,36 +22,16 @@ const ColorBox: React.FunctionComponent<ColorBox> = ({color}) => {
             backgroundRepeat: 'repeat-x',
             backgroundSize: '100% 50%, 100% 50%',
             backgroundPosition: '0 0, 0 100%',
+            borderColor: 'red',
             '&::after': {
                 content: '""',
                 position: 'absolute',
                 display: 'block',
                 inset: 0,
-                bgcolor: color,
+                bgcolor: COLORS[color],
                 borderRadius: 'inherit',
-                boxShadow: 'inset 0 0 0 1px #bababa',
+                boxShadow: boxShadow,
             },
         }}
     />
-};
-
-interface Square {
-    color: number;
-}
-
-export const Square:React.FunctionComponent<Square> = ({color}) => {
-    return <Link
-        component="button"
-        color="neutral"
-        textColor="inherit"
-        startDecorator={<ColorBox color={COLORS[color]} />}
-        sx={{
-            fontSize: 'xs',
-            fontFamily: 'code',
-            textAlign: 'left',
-            alignItems: 'flex-start',
-            cursor: 'copy',
-        }}
-        >
-    </Link>
 };

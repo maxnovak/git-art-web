@@ -7,7 +7,7 @@ export const DrawingMatrix = () => {
         {matrix.map((week) => {
             return <div>
                 {week.map((day) => {
-                    return <Square color={day} />
+                    return <Square color={day} onClick={()=>{}} />
                 })}
             </div>
         })}
