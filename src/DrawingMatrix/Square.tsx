@@ -1,4 +1,5 @@
 import { Box, Link } from '@mui/joy';
+import { COLORS } from './colors';
 
 interface ColorBox {
     color: string
@@ -32,12 +33,16 @@ const ColorBox: React.FunctionComponent<ColorBox> = ({color}) => {
     />
 };
 
-export const Square = () => {
+interface Square {
+    color: number;
+}
+
+export const Square:React.FunctionComponent<Square> = ({color}) => {
     return <Link
         component="button"
         color="neutral"
         textColor="inherit"
-        startDecorator={<ColorBox color="success.900" />}
+        startDecorator={<ColorBox color={COLORS[color]} />}
         sx={{
             fontSize: 'xs',
             fontFamily: 'code',
