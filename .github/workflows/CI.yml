@@ -37,6 +37,11 @@ jobs:
           cache: 'yarn'
       - name: Install dependencies
         run: yarn install --frozen-lockfile
+      - name: Build env file
+        run: |
+          touch .env.production
+          echo VITE_GIT_ART_API=${{vars.VITE_GIT_ART_API}} >> .env.production
+          cat .env.production
       - name: Build
         run: yarn run build
       - name: Setup Pages

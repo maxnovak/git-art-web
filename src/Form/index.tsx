@@ -33,7 +33,7 @@ export const Form = () => {
       body,
     };
     try {
-      const response = await fetch(`http://${import.meta.env.VITE_GIT_ART_API}/make-art`, requestOptions)
+      const response = await fetch(`${import.meta.env.VITE_GIT_ART_API}/make-art`, requestOptions)
       const data = await response.blob();
       const file = await window.URL.createObjectURL(data);
       window.location.assign(file);
